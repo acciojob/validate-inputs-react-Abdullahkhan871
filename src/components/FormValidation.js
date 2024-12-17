@@ -31,7 +31,7 @@ const FormValidation = () => {
       setErrorEmail("Email should contain @ and .com");
     }
 
-    if (/[a-z]/gi.test(mobile) || mobile.length < 10 || mobile == "") {
+    if (/[a-z]/gi.test(mobile) || mobile.length > 10 || mobile == "") {
       setErrorMobile("Mobile number should not be more than 10 characters");
     }
   }
