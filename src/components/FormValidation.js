@@ -73,7 +73,11 @@ const FormValidation = () => {
     <form onSubmit={handleSubmit}>
       <label>Name</label>
       <input type="text" name="name" value={name} onChange={submitValue} />
-      {errorMessage} <br /> <br />
+      {errorMessage && (
+        <p className="errorMessage" style={{ color: "red" }}>
+          {errorMessage}
+        </p>
+      )}
       <label>Address</label>
       <input
         type="text"
@@ -81,13 +85,25 @@ const FormValidation = () => {
         value={address}
         onChange={submitValue}
       />
-      {errorAddress} <br /> <br />
+      {errorAddress && (
+        <p className="errorMessage" style={{ color: "red" }}>
+          {errorAddress}
+        </p>
+      )}
       <label>Email</label>
       <input type="text" name="email" value={email} onChange={submitValue} />
-      {errorEmail} <br /> <br />
+      {errorEmail && (
+        <p className="errorMessage" style={{ color: "red" }}>
+          {errorEmail}
+        </p>
+      )}
       <label>Mobile</label>
       <input type="text" name="mobile" value={mobile} onChange={submitValue} />
-      {errorMobile} <br /> <br />
+      {errorMobile && (
+        <p className="errorMessage" style={{ color: "red" }}>
+          {errorMobile}
+        </p>
+      )}
       <input type="submit" value={"Submit"} />
     </form>
   );
