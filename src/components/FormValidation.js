@@ -21,22 +21,17 @@ const FormValidation = () => {
     setErrorEmail("");
     setErrorMobile("");
 
-    if (email == "" && mobile == "") {
-      setErrorEmail("Please Fill input");
-      setErrorMobile("Please Fill input");
-    }
-
     if (/[^a-z]/gi.test(name) || name == "") {
       setErrorMessage("Name should contain only letters");
     }
     if (/[^a-z0-9\s]/gi.test(address) || address == "") {
       setErrorAddress("Address should not contain special characters");
     }
-    if (!/(.com)/gi.test(email) && !/[@]/gi.test(email)) {
+    if (!/(.com)/gi.test(email) || !/[@]/gi.test(email) || email == "") {
       setErrorEmail("Email should contain @ and .com");
     }
 
-    if (/[a-z]/gi.test(mobile) || mobile.length < 10) {
+    if (/[a-z]/gi.test(mobile) || mobile.length < 10 || mobile == "") {
       setErrorMobile("Mobile number should not be more than 10 characters");
     }
   }
