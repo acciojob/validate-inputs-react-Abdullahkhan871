@@ -16,31 +16,20 @@ const FormValidation = () => {
   function handleSubmit(e) {
     e.preventDefault();
 
-    let regName = /[^a-z]/gi;
-    let regAdd = /[^a-z0-9\s]/gi;
-
     setErrorMessage("");
     setErrorAddress("");
     setErrorEmail("");
     setErrorMobile("");
 
-    if (
-      !name.length > 0 &&
-      !address.length > 0 &&
-      !email.length > 0 &&
-      !mobile.length > 0
-    ) {
-      setErrorMessage("Please Fill input");
-      setErrorAddress("Please Fill input");
+    if (email == "" && mobile == "") {
       setErrorEmail("Please Fill input");
       setErrorMobile("Please Fill input");
-      return;
     }
 
-    if (regName.test(name)) {
+    if (/[^a-z]/gi.test(name) || name == "") {
       setErrorMessage("Name should contain only letters");
     }
-    if (regAdd.test(address)) {
+    if (/[^a-z0-9\s]/gi.test(address) || address == "") {
       setErrorAddress("Address should not contain special characters");
     }
     if (!/(.com)/gi.test(email) && !/[@]/gi.test(email)) {
