@@ -33,19 +33,12 @@ const FormValidation = () => {
       setErrorAddress("Address should not contain special characters");
     }
     if (!/(.com)/gi.test(email) && !/[@]/gi.test(email)) {
-      setErrorEmail("Address should not contain special characters");
+      setErrorEmail("Email should contain @ and .com");
     }
 
     if (/[a-z]/gi.test(mobile) || mobile.length < 10) {
       setErrorMobile("Mobile number should not be more than 10 characters");
     }
-
-    // setUserData({
-    //   name: "",
-    //   address: "",
-    //   email: "",
-    //   mobile: "",
-    // });
   }
 
   function submitValue(e) {
